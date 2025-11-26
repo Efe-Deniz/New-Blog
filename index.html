@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>News Blog | Anasayfa</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon.png" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+    <body>
+        <header class="header" id="header">
+            <nav class="navbar container">
+                <a href="./index.html">
+                    <h2 class="logo">News Blog</h2>
+                </a>
+
+                <input type="checkbox" id="menu-toggle-checkbox" />
+
+                <input type="checkbox" id="search-toggle-checkbox" />
+
+                <div class="menu" id="menu">
+                    <ul class="list">
+                        <li class="list-item">
+                            <a href="index.html" class="list-link current">Anasayfa</a>
+                        </li>
+                        <li class="list-item"><a href="#" class="list-link">Kategori</a></li>
+                        <li class="list-item"><a href="#" class="list-link">İncelemeler</a></li>
+                        <li class="list-item"><a href="#" class="list-link">Haberler</a></li>
+                        <li class="list-item"><a href="#" class="list-link">Üyelik</a></li>
+                        <li class="list-item"><a href="#" class="list-link">İletişim</a></li>
+                        <li class="list-item screen-lg-hidden">
+                            <a href="./signin.html" class="list-link">Giriş Yap</a>
+                        </li>
+                        <li class="list-item screen-lg-hidden">
+                            <a href="./signup.html" class="list-link">Üye Ol</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Haberlerde ara..." />
+                    <i class="ri-search-line search-box-icon"></i>
+                </div>
+
+                <div class="list list-right">
+                    <label
+                        for="search-toggle-checkbox"
+                        class="btn place-items-center search-icon-btn"
+                    >
+                        <i class="ri-search-line open-search-icon"></i>
+                        <i class="ri-close-line close-search-icon"></i>
+                    </label>
+
+                    <a href="#" class="list-link screen-sm-hidden">Giriş Yap</a>
+                    <a href="#" class="list-link screen-sm-hidden btn sign-up-btn fancy-border">
+                        <span>Üye Ol</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <section class="featured-articles section section-header-offset">
+            <div class="featured-content container">
+                <div class="featured-article-image">
+                    <img src="img/featured-1.jpg" alt="Öne Çıkan Haber" class="article-image" />
+                </div>
+
+                <div class="featured-article-data">
+                    <span class="article-category">Teknoloji</span>
+                    <h2 class="article-title">Yapay Zeka Dünyayı Nasıl Değiştiriyor?</h2>
+
+                    <div class="article-data-container">
+                        <span class="article-data">26 Kasım 2025</span>
+                        <span class="article-data-spacer"></span>
+                        <span class="article-data">5 dk okuma</span>
+                    </div>
+
+                    <p class="article-description">
+                        Teknolojinin hızla ilerlemesiyle birlikte yapay zeka hayatımızın her alanına
+                        giriyor. İşte gelecekte bizi bekleyenler...
+                    </p>
+
+                    <a href="#" class="article-btn">
+                        <span>Devamını Oku</span>
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
