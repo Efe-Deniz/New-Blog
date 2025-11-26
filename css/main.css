@@ -3,24 +3,41 @@
 
 /* sitemizin temel ayarlarını rootta yapıyoruz. böylece burada tanımladıktan sonra istediğimiz yerde bu arayları kullanabilliriz*/
 :root {
-    --light-color: #fff;
-    --light-color-alt: #afb6cd;
-    --primary-background-color: #131417;
-    --secondary-background-color: #252830;
-    --hover-light-color: var(--light-color);
-    --hover-dark-color: var(--primary-background-color);
-    --gradient-color: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
-    --transparent-light-color: rgba(255, 255, 255, 0.05);
-    --transparent-dark-color: rgba(0, 0, 0, 0.75);
-    --font-family: 'Poppins', sans-serif;
-    --font-size-xsm: 1.2rem;
-    --font-size-sm: 1.6rem;
-    --font-size-md: 2.4rem;
-    --font-size-lg: 3rem;
-    --font-size-xl: 4rem;
-    --gap: 2rem;
-    --margin-sm: 2rem;
-    --margin-md: 3rem;
+    /*CSS en üst seviyesini seçer bu genelde html etiketi olur ve burada tanımlanan değişkenler sayfanın tamamında geçerli olur*/
+    --light-color: #fff; /*Sitedeki ana metinler ve ikonlar için kullanılacak beyaz rengi tanımlar.*/
+    --light-color-alt: #afb6cd; /*Daha az önemli metinler veya açıklamalar için kullanılacak soluk mavi-gri rengi tanımlar.*/
+    --primary-background-color: #131417; /*Sitenin genel arka planında kullanılacak çok koyu (neredeyse siyah) rengi tanımlar.*/
+    --secondary-background-color: #252830; /*Menü, kartlar veya butonlar gibi ögeleri arka plandan ayırmak için kullanılacak biraz daha açık bir koyu gri rengi tanımlar.*/
+    --hover-light-color: var(
+        --light-color
+    ); /*Fare ile üzerine gelindiğinde kullanılacak açık rengi belirler*/
+    --hover-dark-color: var(
+        --primary-background-color
+    ); /*Fare ile üzerine gelindiğinde kullanılacak koyu rengi belirler*/
+    --gradient-color: linear-gradient(
+        115deg,
+        #4fcf70,
+        #fad648,
+        #a767e5,
+        #12bcfe,
+        #44ce7b
+    ); /*gökkuşağı benzeri renkli bir geçiş tanımlar*/
+    --transparent-light-color: rgba(
+        255,
+        255,
+        255,
+        0.05
+    ); /*Arka planı hafifçe parlatmak için kullanılır*/
+    --transparent-dark-color: rgba(0, 0, 0, 0.75); /*Arka planı karartmak için kullanılır*/
+    --font-family: 'Poppins', sans-serif; /*Sitede kullanılacak yazı tipini 'Poppins' olarak ayarlar, yüklenemezse standart düz yazı tipini kullanır.*/
+    --font-size-xsm: 1.2rem; /*Tarih veya etiket gibi en küçük yazılar için yaklaşık 12px boyutunda bir değişken tanımlar. 1rem=10px*/
+    --font-size-sm: 1.6rem; /*Paragraf ve genel okuma metinleri için yaklaşık 16px boyutunda standart değişkeni tanımlar.*/
+    --font-size-md: 2.4rem; /*Alt başlıklar veya logolar için yaklaşık 24px boyutunda orta boy yazı değişkenini tanımlar.*/
+    --font-size-lg: 3rem; /*Önemli başlıklar için yaklaşık 30px boyutunda büyük yazı değişkenini tanımlar.*/
+    --font-size-xl: 4rem; /*En büyük manşetler için yaklaşık 40px boyutunda ekstra büyük yazı değişkenini tanımlar.*/
+    --gap: 2rem; /*Kutular veya listeler arasındaki boşluğun standart olarak 20px olmasını sağlayan değişkeni tanımlar.*/
+    --margin-sm: 2rem; /*Ögelerin dış kenar boşluğunun küçük boyutu olarak 20px değerini tanımlar.*/
+    --margin-md: 3rem; /*Ögelerin dış kenar boşluğunun orta boyutu olarak 30px değerini tanımlar.*/
 }
 
 /* web sayfalarının. varsayaılan margin ve pading ayarlarını sıfırlıyoruz */
@@ -35,16 +52,17 @@ html {
 }
 
 body {
+    /*sayfanın görünür olan tüm içeriğini*/
     font-family: var(--font-family);
     font-size: var(--font-size-sm);
     color: var(--light-color-alt);
     background-color: var(--primary-background-color);
-    letter-spacing: 1px;
+    letter-spacing: 1px; /*Okunabilirliği artırmak için harflerin arasına 1 piksellik fazladan boşluk koyar.*/
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+    text-decoration: none; /*tarayıcı tarafından varsayılan olarak oluşturan linklerin altındaki çizgiyi kaldırır*/
+    color: inherit; /*en yakın kapsayıcıda miras alır*/
 }
 
 img {
@@ -53,7 +71,7 @@ img {
 }
 
 ul {
-    list-style: none;
+    list-style: none; /*Liste maddelerinin sol başında otomatik olarak çıkan o siyah yuvarlak noktaları kaldırır*/
 }
 
 input,
@@ -61,8 +79,8 @@ button {
     font: inherit;
     color: inherit;
     border: none;
-    background-color: transparent;
-    outline: none;
+    background-color: transparent; /*öğenin arka plan rengini tamamen şeffaf yapar*/
+    outline: none; /*Bir kutuya tıkladığınızda etrafında otomatik çıkan o varsayılan mavi veya siyah vurgu çizgisini kaldırır*/
 }
 
 i {
@@ -70,29 +88,33 @@ i {
 }
 
 .container {
+    /*Bu sınıf ile sitenin içeriğinin büyük ekranlarda dagılmasını önleyerek içeriği ekranın ortasında tutmamızı sağlayan çerçeve yapısıdır*/
     max-width: 160rem;
-    margin: 0 auto;
+    margin: 0 auto; /*Kutuyu sayfada yatay olarak tam ortalar; üstten/alttan boşluk vermez (0), sağ ve sol boşluğu otomatik (auto) ayarlayarak ortada durmasını sağlar.*/
     padding: 0 1.5rem;
 }
 
 .place-items-center {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    /*Bu sınıf, butonların veya kutuların içindeki ikon,yazı gibi şeyleri  tam merkeze oturtmak için kullanılan  yardımcı sınıftır.*/
+    display: inline-flex; /*Hem esnek bir kutu hem de öğenin alt satıra geçmesini engellemek için kullanırız*/
+    align-items: center; /*Kutunun içindeki öğeyi yukarıdan aşağıya tam ortaya hizalar.*/
+    justify-content: center; /*Kutunun içindeki öğeyi sağdan sola tam ortaya hizalar.*/
 }
 
 .section {
-    padding-block: 5rem;
+    /*Sayfadaki ana bölümlere verdiğim ortak sınıf*/
+    padding-block: 5rem; /*Padding-top ve padding-bottom yazmak yerine tek hamlede hem üstten hem alttan 50px boşluk bırakılır*/
 }
 
-/* Header sabit olduğu için içeriği aşağı iteriz */
 .section-header-offset {
+    /*Bu sınıf, sabit duran menünün sayfanın içeriğini kapatmasını engellemek için kullanırız*/
     margin-top: 7rem;
 }
 
 .header {
+    /*Bu blok, sitenin navigasyon menüsünün sayfa kaydırılsa bile ekranda sabit kalmasını sağlayan ayarları içerir.*/
     background-color: var(--secondary-background-color);
-    position: fixed;
+    position: fixed; /*menüyü sabitler*/
     top: 0;
     left: 0;
     width: 100%;
@@ -101,8 +123,9 @@ i {
 }
 
 .navbar {
-    display: flex;
-    align-items: center;
+    /*Menümüzün iç düzeni burada sağlanır*/
+    display: flex; /*öğelwei yan yana hizlarız*/
+    align-items: center; /*boyutları farklı olsa bile tam ortada hizalar*/
     justify-content: space-between;
     padding-block: 1.5rem;
 }
@@ -113,19 +136,20 @@ i {
 }
 
 .menu {
-    position: absolute;
+    /*Bu kısım, özellikle mobilde hamburger ikonuna basınca açılacak olan menü kutusunun tasarımını ve başlangıçtaki gizli halini belirler.*/
+    position: absolute; /*menüyü sayfanın akışından kopararak havada asılı hale getirir*/
     top: 8.5rem;
     right: 1.5rem;
     width: 23rem;
     padding: 1.5rem;
     background-color: var(--secondary-background-color);
 
-    opacity: 0;
-    transform: scale(0);
-    transform-origin: top right;
-    transition: opacity 0.25s, transform 0.25s;
+    opacity: 0; /*menüyü başlangıçta tamamen şeffaf hale getirir*/
+    transform: scale(0); /*menünün boyutunu bailangıçta 0 a kadar indirir.*/
+    transform-origin: top right; /*Menü açılırken ortadan değil, sağ üst köşeden yani hambutger ikonun olduğu yerden dışarı doğru büyüyerek açılmasını sağlar.*/
+    transition: opacity 0.25s, transform 0.25s; /*Menü açılırken görünürlük ve boyut değişiminin aniden değil, 0.25 saniye içinde animasyonlu olmasını sağlar.*/
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 0.5rem;
+    border-radius: 0.5rem; /*kutunun sivri köşelerini hafifçe yuvarlar*/
 }
 
 .list {
@@ -135,10 +159,12 @@ i {
 }
 
 .menu > .list {
-    flex-direction: column; /* Mobilde linkler alt alta */
+    /*Bu kısım, mobil menü açıldığında içindeki linklerin yan yana değil, bir liste gibi alt alta durmasını sağlar. .menu > .list bunun anlamı menünün içindeki ilk listeyi bul demektir */
+    flex-direction: column; /*normalde yan yana duran menüler mobil cihazlarda hamburger ikonuna tıklayınca alt alat sıralanır*/
 }
 
 .list-link-current {
+    /*Bu kısım, kullanıcının o an hangi sayfada olduğunu menüde belli etmek için kullanılır.*/
     color: var(--light-color);
 }
 
@@ -148,22 +174,14 @@ i {
     color: var(--light-color);
 }
 
-/* --- BUTONLAR --- */
-.btn {
-    cursor: pointer;
-}
-.sign-up-btn {
-    padding: 0.5rem 1rem;
-    background-color: var(--secondary-background-color);
-    border-radius: 0.5rem; /* Köşeleri yumuşat */
-}
 .moon-icon {
     display: none;
 }
 
 .search-box {
-    position: absolute;
-    top: 100%;
+    /*Bu kısım, arama butonuna basıldığında Header'ın altından aşağıya doğru açılacak olan arama çubuğunun tasarımını ve gizleme mekanizmasını ayarlar.*/
+    position: absolute; /*burada kutuyu headerin üzerine veya içine değil ondan bağımsız bir katman olarak yerleştiriyoruz*/
+    top: 100%; /*Kutuyu headerin bittiği yere yapıştırır böylece açıldığında Header'ın içinden değil altından çıkıyormuş gibi görünür.*/
     left: 0;
     width: 100%;
     background-color: var(--secondary-background-color);
@@ -172,9 +190,9 @@ i {
     align-items: center;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: transform 0.3s;
+    transform: scaleY(0); /*Kutuyu dikey eksende ezerek yüksekliğini sıfıra indirir*/
+    transform-origin: top; /*Kutu açılırken ortadan değil, üst kenarından aşağıya doğru (perde gibi) açılmasını sağlar.*/
+    transition: transform 0.3s; /*açılma kapanma işlemini aniden değil animasyonlu şekilde yapar*/
 }
 
 .search-input {
@@ -184,6 +202,7 @@ i {
 }
 
 .featured-content {
+    /*Bu kısım, sayfanın en üstündeki "Öne Çıkan Haber" bölümünün ( genel düzenini, öncelikli olarak mobil ekranlar için ayarlar.*/
     display: flex;
     flex-direction: column;
     gap: var(--gap);
@@ -191,30 +210,34 @@ i {
 }
 
 .article-image {
+    /*Bu kısım, haber resimlerinin her ekranda düzgün görünmesini ve estetik durmasını sağlayan ayarlardır.*/
     width: 100%;
     height: auto;
     border-radius: 1rem;
-    object-fit: cover;
+    object-fit: cover; /*Eğer resim kutuya sığmazsa, fazlalıklarını kırparak kutuya tam oturmasını sağlar*/
 }
 
 .article-category {
+    /*Bu blok, haber başlığının hemen üzerinde duran ve haberin türünü belirten (örneğin "TEKNOLOJİ" veya "YAŞAM" yazan) o küçük, kutucuğun tasarımını yapar.*/
     background-color: var(--secondary-background-color);
     color: var(--light-color);
     padding: 0.5rem 1rem;
     font-size: var(--font-size-xsm);
     text-transform: uppercase;
     border-radius: 0.5rem;
-    display: inline-block;
+    display: inline-block; /*Normalde <span> etiketleri alt üst boşluk kabul etmez, bu kodla etiketi yarı kutu haline getiririz ki aşağıya boşluk verebilelim.*/
     margin-bottom: 1rem;
 }
 
 .article-title {
+    /*Bu kısım, manşet haberin en önemli kısmı olan ana başlığın örneğin bizim haberimizde  META'nın gözlüğü var onun görünümünü ayarlar.*/
     font-size: var(--font-size-lg);
     color: var(--light-color);
     margin-bottom: 1rem;
 }
 
 .article-data-container {
+    /*Bu blok, başlığın hemen altındaki "Tarih" ve "Okuma Süresi" gibi ek bilgileri ayarlar*/
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -223,12 +246,14 @@ i {
     margin-bottom: 2rem;
 }
 .article-data-spacer {
+    /*26 Kasım • 5 dk burada kullanılan . bildiğimiz . ayarlamak için kullanılır.*/
     width: 4px;
     height: 4px;
     background-color: var(--light-color-alt);
     border-radius: 50%;
 }
 .article-btn {
+    /*"Devamını Oku" linkini ve yanındaki küçük oku şık bir butona dönüştürür.*/
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -236,29 +261,38 @@ i {
     font-weight: 600;
 }
 
+/*Bu kısım JavaScript kullanmadan menüleri açıp kapatmamızı sağlayan*/
 #menu-toggle-checkbox,
 #search-toggle-checkbox {
     display: none;
 }
 
 #menu-toggle-checkbox:checked ~ .menu {
+    /*Bu blok, kullanıcının menü ikonuna basıp gizli kutuyu işaretlediği anda gerçekleşecek "Açılma" olayını tanımlar.*/
     opacity: 1;
-    transform: scale(1);
+    transform: scale(
+        1
+    ); /*Başlangıçta nokta kadar küçülttüğümüz menüyü orijinal %100 boyutuna getirerek büyüyüp açılmasını sağlar.*/
 }
 
 .close-menu-icon {
+    /*Bu blok, menü kapalıyken "Kapat (X)" ikonunun ekranda görünmesini engellemek içindir.*/
     display: none;
 }
 
 #menu-toggle-checkbox:checked ~ .list-right .menu-toggle-icon .open-menu-icon {
+    /*Menü açıldığında (checkbox işaretlendiğinde), o meşhur "Hamburger" (üç çizgi) ikonunu gizler*/
     display: none;
 }
 #menu-toggle-checkbox:checked ~ .list-right .menu-toggle-icon .close-menu-icon {
+    /*Aynı anda, gizli bekleyen "Çarpı" (X) ikonunu görünür yapar (block), böylece kullanıcı menüyü kapatabileceğini anlar.*/
     display: block;
 }
 
 #search-toggle-checkbox:checked ~ .search-box {
-    transform: scaleY(1);
+    transform: scaleY(
+        1
+    ); /*Başlangıçta ezip yok ettiğimiz (scaleY(0)) arama kutusunu tekrar %100 boyutuna getir, yani yukarıdan aşağıya doğru açılmasını sağla.*/
 }
 
 .close-search-icon {
@@ -266,44 +300,58 @@ i {
 }
 
 #search-toggle-checkbox:checked ~ .list-right .search-icon-btn .open-search-icon {
-    display: none;
+    display: none; /*Arama kutusu açılınca, "Büyüteç" ikonunu gizler.*/
 }
 #search-toggle-checkbox:checked ~ .list-right .search-icon-btn .close-search-icon {
-    display: block;
+    display: block; /*Arama kutusu açılınca, "Çarpı" ikonunu görünür yapar, böylece kullanıcı aramayı kapatabilir.*/
 }
 
+/*Aşağıdaki kıd blogu kısmı sadece ekran genişliği 992 pikselden büyükse (Laptop veya Masaüstü) çalışır.*/
 @media screen and (min-width: 992px) {
     .screen-lg-hidden {
+        /*Büyük ekranlarda (LG) gizlenmesi gereken öğeleri (örneğin Hamburger menü ikonunu) zorla gizler.*/
         display: none !important;
     }
 
     .screen-sm-hidden {
+        /*Küçük ekranlarda gizli olan ama bilgisayarda görünmesi gereken öğeleri (örneğin "Giriş Yap" butonlarını) görünür yapar.*/
         display: block !important;
     }
 
     .menu {
-        position: relative;
+        /*Mobil menüde yaptığımız o "havada duran, gizli kutu" ayarlarını iptal eder.*/
+        position: relative; /*Menüyü havada asılı olmaktan çıkarıp sayfanın normal akışına sokar.*/
+        /*---------------*/
+        /*Bu kısım mobil için verdiğimiz tüm özel konum ve boyut ayarlarını varsayılan (fabrika) ayarlarına sıfırlar.*/
         top: initial;
         right: initial;
         width: initial;
         padding: initial;
-        background-color: transparent;
+        /*-----------------*/
+        background-color: transparent; /*Menünün koyu arka planını kaldırır (şeffaf yapar), çünkü artık header'ın üzerinde duruyor.*/
+        /*----------------------*/
+        /*Bu kısım menünün gizliliğini kaldırırı ve açık yapar bilgisayarlar da hep açık durur*/
         opacity: 1;
         transform: scale(1);
+        /*---------------------*/
         box-shadow: none;
     }
     .menu > .list {
+        /*Mobilde alt alta duran menü linklerini, bilgisayarda yan yana dizer.*/
         flex-direction: row;
     }
 
     .featured-content {
+        /*Mobilde alt alta duran büyük resim ve yazıyı, bilgisayarda yan yana getirir.*/
         flex-direction: row;
     }
     .featured-article-image,
     .featured-article-data {
+        /*Ekranı ikiye böler; sol yarısını resme, sağ yarısını yazıya verir.*/
         width: 50%;
     }
     .featured-article-data {
+        /*azıların resme yapışmaması için sol taraftan biraz boşluk bırakır.*/
         padding-left: 3rem;
     }
 }
