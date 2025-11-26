@@ -354,7 +354,31 @@ i {
         width: 50%;
     }
     .featured-article-data {
-        /*azıların resme yapışmaması için sol taraftan biraz boşluk bırakır.*/
+        /*Yazıların resme yapışmaması için sol taraftan biraz boşluk bırakır.*/
         padding-left: 3rem;
     }
+}
+.about-content {
+    display: flex;
+    flex-direction: column; /* Her zaman alt alta diz (Yan yana gelmesin) */
+    align-items: center; /* Yatayda tam ortaya hizala */
+    text-align: center; /* Yazıları da ortala */
+    gap: var(--gap);
+    width: 100%;
+}
+
+/* Hakkımda Resmine Özel Ayar (İstersen Yuvarlak Yapabiliriz) */
+.about-image {
+    width: 250px; /* Çok kocaman olmasın, sabit bir boyut verelim */
+    height: 250px; /* Kare olsun */
+    object-fit: cover; /* Resim bozulmadan sığsın */
+    border-radius: 50%; /* Tam yuvarlak (Profil fotosu gibi) olsun */
+    border: 4px solid var(--secondary-background-color); /* Şık bir çerçeve */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Gölge ekle */
+}
+
+/* Hakkımda yazısı genişliği */
+.about-text {
+    max-width: 800px; /* Yazı ekranın tamamına yayılmasın, ortada blok dursun */
+    margin: 0 auto;
 }
