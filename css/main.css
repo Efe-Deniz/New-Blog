@@ -45,6 +45,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -61,7 +65,6 @@ body {
 }
 
 a {
-    text-decoration: none; /*tarayıcı tarafından varsayılan olarak oluşturan linklerin altındaki çizgiyi kaldırır*/
     color: inherit; /*en yakın kapsayıcıda miras alır*/
 }
 
