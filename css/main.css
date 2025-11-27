@@ -382,3 +382,51 @@ i {
     max-width: 800px; /* Yazı ekranın tamamına yayılmasın, ortada blok dursun */
     margin: 0 auto;
 }
+
+.footer {
+    background-color: var(--secondary-background-color);
+    padding-block: 3rem; /* Üstten ve alttan boşluk bırak */
+}
+
+/* Kapsayıcıyı Flex Yapıyoruz */
+.footer-container {
+    display: flex;
+    flex-direction: column; /* İçindekileri alt alta diz */
+    align-items: center; /* Yatayda tam ortaya hizala */
+    justify-content: center;
+    gap: 1.5rem; /* İkonlar ile yazı arasındaki boşluk */
+}
+
+.company-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Sosyal Medya Listesi (İkonları yan yana dizelim) */
+.list-media {
+    display: flex; /* İkonları yan yana getir */
+    align-items: center;
+    gap: var(--gap); /* İkonlar arası boşluk */
+    list-style: none; /* Noktaları kaldır */
+}
+
+/* İkonların Rengi ve Boyutu */
+.list-media .list-link {
+    color: var(--light-color);
+    font-size: var(--font-size-lg); /* Biraz büyük olsunlar */
+    transition: color 0.3s;
+}
+
+/* İkonlara gelince renk değişsin (Yeşil yapalım) */
+.list-media .list-link:hover {
+    color: #4fcf70;
+}
+
+/* Telif Hakkı Yazısı */
+.copyright-notice {
+    color: var(--light-color-alt); /* Soluk renk */
+    font-size: var(--font-size-xsm);
+    opacity: 0.8;
+}
